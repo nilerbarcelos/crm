@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
 
-before_filter :load_customers, :only => [:new, :create, :edit, :update]
+  before_filter :load_customers_and_users, :only => [:new, :create, :edit,:update]
 
   # GET /projects
   # GET /projects.xml
@@ -88,9 +88,10 @@ before_filter :load_customers, :only => [:new, :create, :edit, :update]
   end
 
   protected
-  # Carrega os @customers
-  def load_customers
+  # Carrega os @customers e @users
+  def load_customers_and_users
     @customers = Customer.find(:all).collect { |c| [c.name, c.id] }
+    @users = User.find(:all, :order => "name")
   end
 
 end

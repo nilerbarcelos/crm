@@ -11,4 +11,18 @@
     <%= f.select :customer_id, @customers, :prompt => "Select..." %>
   </p>
 
+  <p>
+    <%= f.label :status %><br />
+    Inactive <%= radio_button "project", "active", "false"  %>
+    Active <%= radio_button "project", "active","true"  %>
+  </p>
+
+  <p>
+  <b>Members</b><br />
+  <% @users.each do |user| %>
+    <%= check_box_tag "project[member_ids][]", user.id, @project.members.include?(user) %>
+    <%= user.name %><br />
+  <% end %>
+</p>
+
 

@@ -4,7 +4,6 @@ class CreateProjects < ActiveRecord::Migration
       t.string :name
       t.text :description
       t.references :customer
-
       t.timestamps
     end
   end

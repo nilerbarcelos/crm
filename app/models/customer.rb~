@@ -1,4 +1,6 @@
 class Customer < ActiveRecord::Base
+ 
+  has_many :contracts, :through => :projects
   has_many :projects, :dependent => :delete_all
 
   validates_presence_of :name
@@ -7,3 +9,4 @@ class Customer < ActiveRecord::Base
   validates_format_of :phone, :with => /^(\d|\s)*$/
   validates_inclusion_of :rating, :in => 1..5
 end
+

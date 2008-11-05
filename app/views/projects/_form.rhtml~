@@ -10,5 +10,10 @@
     <%= f.label :customer %><br />
     <%= f.select :customer_id, @customers, :prompt => "Select..." %>
   </p>
-</body>
+
+  <p>
+    <%= f.label :status %><br />
+    Inactive <%= radio_button "project", "active", "false"  %>
+    Active <%= radio_button "project", "active","true"  %>
+  </p>
 

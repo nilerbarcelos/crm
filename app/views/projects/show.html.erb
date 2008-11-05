@@ -9,9 +9,26 @@
 </p>
 
 <p>
+  <b>Active:</b>
+  <%=h @project.active %>
+</p>
+	
+<p>
   <b>Customer:</b>
   <%= link_to  @project.customer.name, @project.customer %>
 </p>
+
+
+<% unless @project.members.empty? %>
+  <p>
+    <b>Members:</b>
+    <ul>
+      <% @project.members.each do |member| %>
+        <li><%=h member.name %></li>
+      <% end %>
+    </ul>
+  </p>
+<% end %>
 
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
