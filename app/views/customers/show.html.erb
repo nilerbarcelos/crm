@@ -18,7 +18,6 @@
   <b>Projects:</b> 
  <ul> 
    <% @customer.projects.each do |project| %> 
-   <!--<li><%=h project.name %> </li> -->
    <li><%= link_to project.name, project %></li> 
    <% end %> 
   </ul> 
@@ -29,7 +28,7 @@
   <p>
     <b>Contracts:</b>
     <ul>
-      <% @customer.contracts.each do |project| %>
+      <% @customer.contracts.each do |contract| %>
         <li><%=h contract.name %></li>
       <% end %>
     </ul>

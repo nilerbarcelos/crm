@@ -1,7 +1,9 @@
 class Project < ActiveRecord::Base
+
    belongs_to :customer
-   has_many :contracts
-   has_many :tasks
+   
+   has_many :contracts, dependent => :delete_all
+   has_many :tasks, dependent => :delete_all
    has_many :implementors, :through => :tasks, :source => :owner
 
    has_and_belongs_to_many :members, :class_name => "User",

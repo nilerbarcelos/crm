@@ -13,17 +13,17 @@
  <%=h @customer.rating %> 
 </p> 
 
- <% unless @customer.projects.empty? %> 
- <p> 
-  <b>Projects:</b> 
- <ul> 
-   <% @customer.projects.each do |project| %> 
-   <!--<li><%=h project.name %> </li> -->
-   <li><%= link_to project.name, project %></li> 
-   <% end %> 
-  </ul> 
-<% end %> 
- </p> 
+
+<% unless @customer.contracts.empty? %>
+  <p>
+    <b>Contracts:</b>
+    <ul>
+      <% @customer.contracts.each do |contract| %>
+        <li><%=h contract.name %></li>
+      <% end %>
+    </ul>
+  </p>
+<% end %>
 
 <%= link_to 'Edit', edit_customer_path(@customer) %> |
 <%= link_to 'Back', customers_path %>
