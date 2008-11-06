@@ -1,0 +1,41 @@
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :code %><br />
+    <%= f.text_field :code %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :status %><br />
+    <%= f.select :status, Contract::STATUS_OPTIONS %>
+  </p>
+  <p>
+    <%= f.label :started_at %><br />
+     <%= f.date_select(:started_at, :order => [:day, :month, :year]) %>
+  </p>
+  <p>
+    <%= f.label :ended_at %><br />
+    <%= f.date_select(:ended_at, :order => [:day, :month, :year], :include_blank => true) %>
+  </p>
+  <p>
+    <%= f.label :value %><br />
+    <%= f.text_field :value %>
+  </p>
+
+  <p>
+    <%= f.label :leader %><br />
+    <%= f.select :leader_id, @users, :prompt => "Select..." %>
+  </p>
+
+  <p>
+    <%= f.label :project %><br />
+    <%= f.select :project_id, @projects, :prompt => "Select..." %>
+  </p>
+

@@ -1,0 +1,42 @@
+<p>
+  <b>Name:</b>
+  <%=h @user.name %>
+</p>
+
+<p>
+  <b>Login:</b>
+  <%=h @user.login %>
+</p>
+
+<p>
+  <b>Password:</b>
+  <%=h @user.password %>
+</p>
+
+<p>
+  <b>Kind:</b>
+  <%=h @user.kind %>
+</p>
+ 
+ <% unless @user.contracts.empty? %> 
+ <p> 
+  <b>He Is Leaders of this Contracts:</b> 
+ <ul> 
+   <% @user.contracts.each do |contract| %> 
+   <li><%= link_to contract.name, contract %></li> 
+   <% end %> 
+  </ul> 
+<% end %> 
+
+ <% unless @user.tasks.empty? %> 
+ <p> 
+  <b>Tasks destinated:</b> 
+ <ul> 
+   <% @user.tasks.each do |task| %> 
+   <li><%= link_to task.title, tasks %></li> 
+   <% end %> 
+  </ul> 
+<% end %>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

@@ -1,0 +1,3 @@
+module ContractsHelper
+STATUS_OPTIONS = %w(prospecting accepted canceled)
+end

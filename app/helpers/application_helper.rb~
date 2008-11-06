@@ -1,0 +1,8 @@
+# Methods added to this helper will be available to all templates in the application.
+module ApplicationHelper
+ public
+  def load_users_and_projects
+    @projects = Project.find(:all).collect { |c| [c.name, c.id] }
+    @users = User.find(:all).collect { |c| [c.name, c.id] }
+  end
+end

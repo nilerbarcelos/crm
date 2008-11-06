@@ -1,0 +1,36 @@
+<h1>Listing users</h1>
+
+
+<% for user in @users %>
+  <% for column in User.content_columns %>
+     <p>
+     <b><%= column.human_name %>:</b> %>
+     </p>
+  <% end %>
+<% end %>
+
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Login</th>
+    <th>Password</th>
+    <th>Kind</th>
+  </tr>
+
+<% for user in @users %>
+  <tr>
+    <td><%=h user.name %></td>
+    <td><%=h user.login %></td>
+    <td><%=h user.password %></td>
+    <td><%=h user.kind %></td>
+    <td><%= link_to 'Show', user %></td>
+    <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New user', new_user_path %>

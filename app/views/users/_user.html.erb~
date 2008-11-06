@@ -1,0 +1,8 @@
+
+<!--[form:user]-->
+  <%=.error_messages_for 'user'%>
+  <p>
+    < label for ="user_name">Name</label><br />
+    <%= text_field 'user','name' %>
+  </p>
+
