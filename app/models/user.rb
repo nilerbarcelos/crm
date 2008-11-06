@@ -15,9 +15,8 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password
 
 
-  def update_attributes(attributes)
-    self.attributes = attributes.reject{ |att| (att[0] == "password" && att[1].blank?) }
-    save
+  def password=(p)
+   self[:password] = p unless p.blank?
   end
 
 end
