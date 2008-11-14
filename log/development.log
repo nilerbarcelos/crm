@@ -48020,3 +48020,150 @@ Rendering template within layouts/application
 Rendering documents/index
 [paperclip] Paperclip attachment doc on Document initialized.
 Completed in 0.03838 (26 reqs/sec) | Rendering: 0.00363 (9%) | DB: 0.00191 (4%) | 200 OK [http://localhost/projects/5/documents]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-11-14 18:30:34) [GET]
+  Session ID: BAh7ByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7ADoMY3NyZl9pZCIlN2E0ZTI1MWMzYTIwZWRjMWQ1
+ZjIxMjE5OTdhMDY2NGM=--c4950e71115f5727b87b0cb028c16a838ea18e0d
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: near "SET": syntax error: SET NAMES UTF8[0m
+Rendering template within layouts/application
+Rendering home/index
+Completed in 0.01159 (86 reqs/sec) | Rendering: 0.00496 (42%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2008-11-14 18:30:37) [GET]
+  Session ID: BAh7ByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7ADoMY3NyZl9pZCIlN2E0ZTI1MWMzYTIwZWRjMWQ1
+ZjIxMjE5OTdhMDY2NGM=--c4950e71115f5727b87b0cb028c16a838ea18e0d
+  Parameters: {"action"=>"index", "controller"=>"projects"}
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: near "SET": syntax error: SET NAMES UTF8[0m
+  [4;36;1mProject Load Including Associations (0.004910)[0m   [0;1mSELECT "projects"."id" AS t0_r0, "projects"."name" AS t0_r1, "projects"."description" AS t0_r2, "projects"."customer_id" AS t0_r3, "projects"."created_at" AS t0_r4, "projects"."updated_at" AS t0_r5, "projects"."active" AS t0_r6, "projects"."photo_file_name" AS t0_r7, "projects"."photo_content_type" AS t0_r8, "projects"."photo_file_size" AS t0_r9, "projects"."photo_updated_at" AS t0_r10, "customers"."id" AS t1_r0, "customers"."name" AS t1_r1, "customers"."description" AS t1_r2, "customers"."rating" AS t1_r3, "customers"."created_at" AS t1_r4, "customers"."updated_at" AS t1_r5, "customers"."phone_country_code" AS t1_r6, "customers"."phone_area_code" AS t1_r7, "customers"."phone_number" AS t1_r8 FROM "projects" LEFT OUTER JOIN "customers" ON "customers".id = "projects".customer_id ORDER BY customers.name[0m
+Rendering template within layouts/application
+Rendering projects/index
+[paperclip] Paperclip attachment photo on Project initialized.
+[paperclip] Paperclip attachment photo on Project initialized.
+[paperclip] Paperclip attachment photo on Project initialized.
+[paperclip] Paperclip attachment photo on Project initialized.
+[paperclip] Paperclip attachment photo on Project initialized.
+[paperclip] Paperclip attachment photo on Project initialized.
+[paperclip] Paperclip attachment photo on Project initialized.
+[paperclip] Paperclip attachment photo on Project initialized.
+[paperclip] Paperclip attachment photo on Project initialized.
+[paperclip] Paperclip attachment photo on Project initialized.
+Completed in 0.05796 (17 reqs/sec) | Rendering: 0.02003 (34%) | DB: 0.00491 (8%) | 200 OK [http://localhost/projects]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-11-14 18:30:37) [GET]
+  Session ID: BAh7ByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7ADoMY3NyZl9pZCIlN2E0ZTI1MWMzYTIwZWRjMWQ1
+ZjIxMjE5OTdhMDY2NGM=--c4950e71115f5727b87b0cb028c16a838ea18e0d
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/photos/very_small/missing.png" with {:method=>:get}):
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/routing/recognition_optimisation.rb:67:in `recognize_path'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/routing/route_set.rb:384:in `recognize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:148:in `handle_request'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.1.1/lib/webrick_server.rb:112:in `handle_dispatch'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.1.1/lib/webrick_server.rb:78:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.1.1/lib/webrick_server.rb:62:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.1.1/lib/commands/servers/webrick.rb:66
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:510:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:510:in `require'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.1.1/lib/commands/server.rb:39
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing DocumentsController#index (for 127.0.0.1 at 2008-11-14 18:30:39) [GET]
+  Session ID: BAh7ByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7ADoMY3NyZl9pZCIlN2E0ZTI1MWMzYTIwZWRjMWQ1
+ZjIxMjE5OTdhMDY2NGM=--c4950e71115f5727b87b0cb028c16a838ea18e0d
+  Parameters: {"project_id"=>"1", "action"=>"index", "controller"=>"documents"}
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: near "SET": syntax error: SET NAMES UTF8[0m
+  [4;36;1mProject Load (0.000600)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 1) [0m
+  [4;35;1mDocument Load (0.000457)[0m   [0mSELECT "documents".* FROM "documents" WHERE ("documents".project_id IN (1)) [0m
+  [4;36;1mDocument Load (0.000231)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".project_id = 1) [0m
+Rendering template within layouts/application
+Rendering documents/index
+Completed in 0.03177 (31 reqs/sec) | Rendering: 0.00316 (9%) | DB: 0.00129 (4%) | 200 OK [http://localhost/projects/1/documents]
+
+
+Processing DocumentsController#index (for 127.0.0.1 at 2008-11-14 18:30:44) [GET]
+  Session ID: BAh7ByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7ADoMY3NyZl9pZCIlN2E0ZTI1MWMzYTIwZWRjMWQ1
+ZjIxMjE5OTdhMDY2NGM=--c4950e71115f5727b87b0cb028c16a838ea18e0d
+  Parameters: {"project_id"=>"11", "action"=>"index", "controller"=>"documents"}
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: near "SET": syntax error: SET NAMES UTF8[0m
+  [4;36;1mProject Load (0.000602)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 11) [0m
+  [4;35;1mDocument Load (0.000454)[0m   [0mSELECT "documents".* FROM "documents" WHERE ("documents".project_id IN (11)) [0m
+  [4;36;1mDocument Load (0.000219)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".project_id = 11) [0m
+Rendering template within layouts/application
+Rendering documents/index
+Completed in 0.03222 (31 reqs/sec) | Rendering: 0.00145 (4%) | DB: 0.00128 (3%) | 200 OK [http://localhost/projects/11/documents]
+
+
+Processing DocumentsController#index (for 127.0.0.1 at 2008-11-14 18:30:47) [GET]
+  Session ID: BAh7ByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7ADoMY3NyZl9pZCIlN2E0ZTI1MWMzYTIwZWRjMWQ1
+ZjIxMjE5OTdhMDY2NGM=--c4950e71115f5727b87b0cb028c16a838ea18e0d
+  Parameters: {"project_id"=>"6", "action"=>"index", "controller"=>"documents"}
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: near "SET": syntax error: SET NAMES UTF8[0m
+  [4;36;1mProject Load (0.000578)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 6) [0m
+  [4;35;1mDocument Load (0.000452)[0m   [0mSELECT "documents".* FROM "documents" WHERE ("documents".project_id IN (6)) [0m
+  [4;36;1mDocument Load (0.000304)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".project_id = 6) [0m
+Rendering template within layouts/application
+Rendering documents/index
+Completed in 0.03252 (30 reqs/sec) | Rendering: 0.00150 (4%) | DB: 0.00133 (4%) | 200 OK [http://localhost/projects/6/documents]
+
+
+Processing DocumentsController#index (for 127.0.0.1 at 2008-11-14 18:30:50) [GET]
+  Session ID: BAh7ByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7ADoMY3NyZl9pZCIlN2E0ZTI1MWMzYTIwZWRjMWQ1
+ZjIxMjE5OTdhMDY2NGM=--c4950e71115f5727b87b0cb028c16a838ea18e0d
+  Parameters: {"project_id"=>"7", "action"=>"index", "controller"=>"documents"}
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: near "SET": syntax error: SET NAMES UTF8[0m
+  [4;36;1mProject Load (0.000539)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 7) [0m
+  [4;35;1mDocument Load (0.000429)[0m   [0mSELECT "documents".* FROM "documents" WHERE ("documents".project_id IN (7)) [0m
+  [4;36;1mDocument Load (0.000216)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".project_id = 7) [0m
+Rendering template within layouts/application
+Rendering documents/index
+Completed in 0.03114 (32 reqs/sec) | Rendering: 0.00143 (4%) | DB: 0.00118 (3%) | 200 OK [http://localhost/projects/7/documents]
+
+
+Processing DocumentsController#index (for 127.0.0.1 at 2008-11-14 18:30:55) [GET]
+  Session ID: BAh7ByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7ADoMY3NyZl9pZCIlN2E0ZTI1MWMzYTIwZWRjMWQ1
+ZjIxMjE5OTdhMDY2NGM=--c4950e71115f5727b87b0cb028c16a838ea18e0d
+  Parameters: {"project_id"=>"5", "action"=>"index", "controller"=>"documents"}
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: near "SET": syntax error: SET NAMES UTF8[0m
+  [4;36;1mProject Load (0.000542)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 5) [0m
+  [4;35;1mDocument Load (0.000760)[0m   [0mSELECT "documents".* FROM "documents" WHERE ("documents".project_id IN (5)) [0m
+  [4;36;1mDocument Load (0.000663)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".project_id = 5) [0m
+Rendering template within layouts/application
+Rendering documents/index
+[paperclip] Paperclip attachment doc on Document initialized.
+Completed in 0.03749 (26 reqs/sec) | Rendering: 0.00357 (9%) | DB: 0.00197 (5%) | 200 OK [http://localhost/projects/5/documents]
