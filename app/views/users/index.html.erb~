@@ -1,15 +1,5 @@
 <h1>Listing users</h1>
 
-
-<% for user in @users %>
-  <% for column in User.content_columns %>
-     <p>
-     <b><%= column.human_name %>:</b> %>
-     </p>
-  <% end %>
-<% end %>
-
-
 <table>
   <tr>
     <th>Name</th>
@@ -32,5 +22,7 @@
 </table>
 
 <br />
+
+<%= Log.find(1).name%>
 
 <%= link_to 'New user', new_user_path %>

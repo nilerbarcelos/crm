@@ -1,0 +1,7 @@
+module My_Log
+  class Log < ActiveRecord::Base
+  def oi
+    "ola"
+  end
+end
+
