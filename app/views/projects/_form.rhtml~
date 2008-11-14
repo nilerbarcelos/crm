@@ -17,3 +17,14 @@
     Active <%= radio_button "project", "active","true"  %>
   </p>
 
+  <p>
+  <b>Members</b><br />
+  <% @users.each do |user| %>
+    <%= check_box_tag "project[member_ids][]", user.id, @project.members.include?(user) %>
+    <%= user.name %><br />
+  <% end %>
+</p>
+
+  <p><%=f.file_field :photo%></p>
+
+

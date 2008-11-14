@@ -1,0 +1,11 @@
+<p>
+  <b>Title:</b>
+  <%=h @document.title %>
+</p>
+<p>
+  <b>Download:</b>
+  <%= link_to "Download #{@document.title}", @document.doc.url %>
+</p>
+
+<%= link_to 'Edit', edit_project_document_path(@project, @document) %> |
+<%= link_to 'Back', project_documents_path(@project) %>

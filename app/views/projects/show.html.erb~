@@ -1,3 +1,6 @@
+
+<p><%= image_tag @project.photo.url(:small) %><p>
+
 <p>
   <b>Name:</b>
   <%=h @project.name %>
@@ -29,7 +32,6 @@
     </ul>
   </p>
 <% end %>
-
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081106203625) do
+ActiveRecord::Schema.define(:version => 20081114191116) do
 
   create_table "contracts", :force => true do |t|
     t.string   "name",        :null => false
@@ -36,6 +36,17 @@ ActiveRecord::Schema.define(:version => 20081106203625) do
     t.string   "phone_number"
   end
 
+  create_table "documents", :force => true do |t|
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "doc_file_name"
+    t.string   "doc_content_type"
+    t.integer  "doc_file_size"
+    t.datetime "doc_updated_at"
+    t.integer  "project_id"
+  end
+
   create_table "logs", :force => true do |t|
     t.text     "message"
     t.datetime "created_at"
@@ -49,6 +60,10 @@ ActiveRecord::Schema.define(:version => 20081106203625) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "active"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "projects_members", :id => false, :force => true do |t|

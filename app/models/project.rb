@@ -10,6 +10,16 @@ class Project < ActiveRecord::Base
      :join_table => "projects_members",
      :association_foreign_key => "member_id"
 
+   has_many :documents, :dependent => :delete_all
+
+   has_attached_file :photo, :styles => {:small =>"100x100>", :very_small =>"50x50>"},
+			:url =>	 "/assets/projects/:id/:style/:basename.:extension",
+			:path => ":rails_root/public/assets/projects/:id/:style/:basename.:extension"
+   
+   validates_attachment_presence :photo
+   validates_attachment_size :photo, :less_than => 5.megabytes
+   validates_attachment_content_type :photo, :content_type => ['image/jpeg', 'image/png' ]
+
    named_scope :actives, :conditions => {:active => true} 
    named_scope :inactives, :conditions => {:active => false}
 
