@@ -6,6 +6,7 @@
     <th>Login</th>
     <th>Password</th>
     <th>Kind</th>
+    <th>Documents</th>
   </tr>
 
 <% for user in @users %>
@@ -14,6 +15,7 @@
     <td><%=h user.login %></td>
     <td><%=h user.password %></td>
     <td><%=h user.kind %></td>
+    <td><%= link_to "Documents", user_documents_path(user) %></td>
     <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
     <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
@@ -23,6 +25,5 @@
 
 <br />
 
-<%= Log.find(1).name%>
 
 <%= link_to 'New user', new_user_path %>

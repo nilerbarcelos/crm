@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   has_many :contracts, :foreign_key => 'leader_id', :dependent => :delete_all
   has_many :tasks, :foreign_key => 'owner_id', :dependent => :delete_all
  
+  has_many :documents, :as => :archivable, :dependent => :delete_all
+ 
   validates_presence_of :name
   validates_presence_of :login
   validates_presence_of :password, :on => :create

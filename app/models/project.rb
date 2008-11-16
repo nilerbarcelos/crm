@@ -10,7 +10,7 @@ class Project < ActiveRecord::Base
      :join_table => "projects_members",
      :association_foreign_key => "member_id"
 
-   has_many :documents, :dependent => :delete_all
+   has_many :documents, :as => :archivable, :dependent => :delete_all
 
    has_attached_file :photo, :styles => {:small =>"100x100>", :very_small =>"50x50>"},
 			:url =>	 "/assets/projects/:id/:style/:basename.:extension",
@@ -27,4 +27,8 @@ class Project < ActiveRecord::Base
    validates_presence_of :name
    validates_uniqueness_of :name
    validates_presence_of :customer_id
+   
+  #def photo=(p)
+   #self[:photo] = p unless p.blank?
+  #end
 end

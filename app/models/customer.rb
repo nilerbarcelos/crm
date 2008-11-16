@@ -1,6 +1,6 @@
 class Customer < ActiveRecord::Base
  
-  has_many :projects
+  has_many :projects, :dependent => :delete_all
   has_many :contracts, :through => :projects
 
   validates_presence_of :name

@@ -11,6 +11,7 @@ class Customer < ActiveRecord::Base
   validates_numericality_of :phone_country_code 
   validates_numericality_of :phone_area_code 
   validates_format_of :phone_number, :with => /^(\d|\s|-)+$/ 
+
   composed_of :phone, :class_name => "Phone", 
 	:mapping => [ 
 	%w(phone_country_code), 

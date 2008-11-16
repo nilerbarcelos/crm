@@ -1,6 +1,6 @@
 class AddReferencesProjectToDocument < ActiveRecord::Migration
   def self.up
-    add_column :documents, :project, :references
+    add_column :documents, :project_id, :integer
   end
 
   def self.down

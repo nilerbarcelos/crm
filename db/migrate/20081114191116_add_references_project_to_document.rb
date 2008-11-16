@@ -4,6 +4,6 @@ class AddReferencesProjectToDocument < ActiveRecord::Migration
   end
 
   def self.down
-    remove_column :documents, :project
+    remove_column :documents, :project_id
   end
 end

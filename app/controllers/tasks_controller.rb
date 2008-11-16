@@ -6,7 +6,7 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.xml
   def index
-    @tasks = Task.find(:all)
+    @tasks = Task.find(:all, :include => [:owner, :project])
 
     respond_to do |format|
       format.html # index.html.erb

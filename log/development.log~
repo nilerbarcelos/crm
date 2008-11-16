@@ -1,0 +1,97 @@
+
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2008-11-15 15:36:27) [GET]
+  Session ID: BAh7ByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7ADoMY3NyZl9pZCIlOTY4YjY4ZDI2OWIwMDE2MGM2
+ZmQzYWY1NzBjZWEwZTU=--5ffe19221e31a4098250d763868966407756cda2
+  Parameters: {"action"=>"index", "controller"=>"projects"}
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: near "SET": syntax error: SET NAMES UTF8[0m
+  [4;35;1mProject Load Including Associations (0.004826)[0m   [0mSELECT "projects"."id" AS t0_r0, "projects"."name" AS t0_r1, "projects"."description" AS t0_r2, "projects"."customer_id" AS t0_r3, "projects"."created_at" AS t0_r4, "projects"."updated_at" AS t0_r5, "projects"."active" AS t0_r6, "projects"."photo_file_name" AS t0_r7, "projects"."photo_content_type" AS t0_r8, "projects"."photo_file_size" AS t0_r9, "projects"."photo_updated_at" AS t0_r10, "customers"."id" AS t1_r0, "customers"."name" AS t1_r1, "customers"."description" AS t1_r2, "customers"."rating" AS t1_r3, "customers"."created_at" AS t1_r4, "customers"."updated_at" AS t1_r5, "customers"."phone_country_code" AS t1_r6, "customers"."phone_area_code" AS t1_r7, "customers"."phone_number" AS t1_r8 FROM "projects" LEFT OUTER JOIN "customers" ON "customers".id = "projects".customer_id ORDER BY customers.name[0m
+Rendering template within layouts/application
+Rendering projects/index
+[paperclip] Paperclip attachment photo on Project initialized.
+[paperclip] Paperclip attachment photo on Project initialized.
+[paperclip] Paperclip attachment photo on Project initialized.
+[paperclip] Paperclip attachment photo on Project initialized.
+[paperclip] Paperclip attachment photo on Project initialized.
+[paperclip] Paperclip attachment photo on Project initialized.
+[paperclip] Paperclip attachment photo on Project initialized.
+[paperclip] Paperclip attachment photo on Project initialized.
+[paperclip] Paperclip attachment photo on Project initialized.
+[paperclip] Paperclip attachment photo on Project initialized.
+Completed in 0.05917 (16 reqs/sec) | Rendering: 0.02226 (37%) | DB: 0.00483 (8%) | 200 OK [http://localhost/projects]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-11-15 15:36:27) [GET]
+  Session ID: BAh7ByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7ADoMY3NyZl9pZCIlOTY4YjY4ZDI2OWIwMDE2MGM2
+ZmQzYWY1NzBjZWEwZTU=--5ffe19221e31a4098250d763868966407756cda2
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/photos/very_small/missing.png" with {:method=>:get}):
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/routing/recognition_optimisation.rb:67:in `recognize_path'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/routing/route_set.rb:384:in `recognize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:148:in `handle_request'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.1.1/lib/webrick_server.rb:112:in `handle_dispatch'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.1.1/lib/webrick_server.rb:78:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.1.1/lib/webrick_server.rb:62:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.1.1/lib/commands/servers/webrick.rb:66
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:510:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/dependencies.rb:510:in `require'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.1.1/lib/commands/server.rb:39
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing DocumentsController#index (for 127.0.0.1 at 2008-11-15 15:36:46) [GET]
+  Session ID: BAh7ByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7ADoMY3NyZl9pZCIlOTY4YjY4ZDI2OWIwMDE2MGM2
+ZmQzYWY1NzBjZWEwZTU=--5ffe19221e31a4098250d763868966407756cda2
+  Parameters: {"project_id"=>"5", "action"=>"index", "controller"=>"documents"}
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: near "SET": syntax error: SET NAMES UTF8[0m
+  [4;35;1mProject Load (0.000631)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = '5') LIMIT 1[0m
+  [4;36;1mDocument Load (0.001019)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".archivable_id = 5 AND "documents".archivable_type = 'Project') [0m
+Rendering template within layouts/application
+Rendering documents/index
+[paperclip] Paperclip attachment doc on Document initialized.
+[paperclip] Paperclip attachment doc on Document initialized.
+Completed in 0.04295 (23 reqs/sec) | Rendering: 0.01355 (31%) | DB: 0.00165 (3%) | 200 OK [http://localhost/projects/5/documents]
+
+
+Processing DocumentsController#index (for 127.0.0.1 at 2008-11-15 15:37:46) [GET]
+  Session ID: BAh7ByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7ADoMY3NyZl9pZCIlOTY4YjY4ZDI2OWIwMDE2MGM2
+ZmQzYWY1NzBjZWEwZTU=--5ffe19221e31a4098250d763868966407756cda2
+  Parameters: {"project_id"=>"5", "action"=>"index", "controller"=>"documents"}
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: near "SET": syntax error: SET NAMES UTF8[0m
+  [4;36;1mProject Load (0.000705)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = '5') LIMIT 1[0m
+  [4;35;1mDocument Load (0.001120)[0m   [0mSELECT "documents".* FROM "documents" WHERE ("documents"."archivable_id" IN (5) and "documents"."archivable_type" = 'Project') [0m
+  [4;36;1mDocument Load (0.000865)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".archivable_id = 5 AND "documents".archivable_type = 'Project') [0m
+Rendering template within layouts/application
+Rendering documents/index
+[paperclip] Paperclip attachment doc on Document initialized.
+[paperclip] Paperclip attachment doc on Document initialized.
+Completed in 0.04157 (24 reqs/sec) | Rendering: 0.00463 (11%) | DB: 0.00269 (6%) | 200 OK [http://localhost/projects/5/documents]

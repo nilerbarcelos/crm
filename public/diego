@@ -1,0 +1,20 @@
+
+preenche([], []).
+
+preenche(L, R) :-
+	%del_e(E, L, L3),
+	proximaVar(L, X),%write(X),nl,
+	del_e(X, L, L3),%write(L3),nl,	
+	valorMenosRestritivo(X, Letra),%write(Letra),nl,	
+	preenche(L3, Lat),%write(Lat),nl,
+	salvaAtribuicao(at(X, Letra), Lat, R).
+
+
+%-----------------------------------------------------------------------
+% Variáveis Atribuidas
+%-----------------------------------------------------------------------
+
+salvaAtribuicao(H, [], [H]).
+salvaAtribuicao(H, [H1|T], [H1|R]) :-	
+	salvaAtribuicao(H, T, R).	
+

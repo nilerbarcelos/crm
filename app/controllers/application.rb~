@@ -12,4 +12,41 @@ class ApplicationController < ActionController::Base
   # Uncomment this to filter the contents of submitted sensitive data parameters
   # from your application log (in this case, all fields with names like "password"). 
   # filter_parameter_logging :password
+
+  before_filter :configure_charsets 
+
+  # Especifico para Mysql
+  def configure_charsets 
+	headers["Content-Type"] = "text/html; charset=utf-8" 
+	suppress(ActiveRecord::StatementInvalid) do 
+	  ActiveRecord::Base.connection.execute 'SET NAMES UTF8' 
+	end
+  end 
+
+protected
+   class << self
+
+	attr_reader :parents
+
+	def parent_resources(*parents)
+	  @parents = parents
+	end
+   end
+
+  def parent_id(parent)
+    request.path_parameters["#{ parent }_id"]
+  end
+
+  def parent_type
+    self.class.parents.detect { |parent| parent_id(parent) }
+  end
+   
+  def parent_object
+    parent_class && parent_class.find_by_id(parent_id(parent_type))
+  end
+
+  def parent_class
+    parent_type && parent_type.to_s.classify.constantize
+  end
+
 end

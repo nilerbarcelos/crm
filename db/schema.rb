@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081114191116) do
+ActiveRecord::Schema.define(:version => 20081115115516) do
 
   create_table "contracts", :force => true do |t|
     t.string   "name",        :null => false
@@ -44,7 +44,8 @@ ActiveRecord::Schema.define(:version => 20081114191116) do
     t.string   "doc_content_type"
     t.integer  "doc_file_size"
     t.datetime "doc_updated_at"
-    t.integer  "project_id"
+    t.integer  "archivable_id"
+    t.string   "archivable_type"
   end
 
   create_table "logs", :force => true do |t|

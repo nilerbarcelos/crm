@@ -5,7 +5,9 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :contracts
 
-  map.resources :users
+  map.resources :users do |u| 
+     u.resources :documents
+  end
 
   map.resources :projects do |p|
      p.resources :documents

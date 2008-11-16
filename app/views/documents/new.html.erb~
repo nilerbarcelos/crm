@@ -2,4 +2,4 @@
 
 <%= render :partial => "form", :locals => {:type => "Create"} %>
 
-<%= link_to 'Back', project_documents_path(@project) %>
+<%= link_to 'Back', polymorphic_path([@parent, @document]) %>
