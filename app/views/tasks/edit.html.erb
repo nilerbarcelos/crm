@@ -2,7 +2,7 @@
 
 <% form_for(@task) do |f| %>
   <%= render :partial => 'form', :locals => { :f => f } %>
-  <%= submit_tag 'Edit' %>
+  <%= submit_tag 'Update' %>
 <% end %>
 
 <%= link_to 'Show', @task %> |

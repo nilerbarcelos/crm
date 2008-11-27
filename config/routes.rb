@@ -16,6 +16,13 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :customers
 
+  map.resources :sessions
+
+  map.with_options(:controller => "sessions") do |sessions|
+    sessions.login "/login", :action => "new"
+    sessions.logout "/logout", :action => "destroy"
+end
+
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

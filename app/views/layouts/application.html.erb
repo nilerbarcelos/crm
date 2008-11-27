@@ -6,6 +6,7 @@
     <title>CRM</title>
     <%= stylesheet_link_tag "default" %>
     <%= stylesheet_link_tag "scaffold" %>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:3000/tasks.rss" />
   </head>
   <body>
     <h1>CRM</h1>
@@ -15,7 +16,9 @@
       <li><%= link_to "Tasks", tasks_url %></li>
       <li><%= link_to "Users", users_url %></li>
       <li><%= link_to "Contracts", contracts_url %></li>
+      <li><%= link_to "Logout", logout_url %></li>
     </ul>
     <div id="contents"><%= yield %></div>
   </body>
 </html>
+

@@ -1,7 +1,7 @@
 <h1>Editing task</h1>
 
 <% form_for(@task) do |f| %>
-  <%= render :partial => 'form' :locals => { :f => f } %>
+  <%= render :partial => 'form', :locals => { :f => f } %>
   <%= submit_tag 'Edit' %>
 <% end %>
 

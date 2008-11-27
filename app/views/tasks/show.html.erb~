@@ -43,7 +43,13 @@
   <%= link_to h(@task.project.name), @task.project %>
 </p>
 
-<%= Rails::Log.find 1%>
+<p>
+  <b>Members:</b>
+  <%=  @task.project.members.size  %>
+<% @task.project.members.each{|b|  %>
+<%=  "----> #{b.name}" %>
+<% } %>
+</p>
 
 <%= link_to 'Edit', edit_task_path(@task) %> |
 <%= link_to 'Back', tasks_path %>

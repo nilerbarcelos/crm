@@ -1,15 +1,18 @@
 class TasksController < ApplicationController
 
   before_filter :load_users_and_projects, :only => [:new, :create, :edit, :update]
- 
+
+  after_filter :notify_users, :only => [:update]
+
 
   # GET /tasks
   # GET /tasks.xml
   def index
-    @tasks = Task.find(:all, :include => :owner)
+    @tasks = Task.find(:all, :include => [:owner, :project])
 
     respond_to do |format|
       format.html # index.html.erb
+      format.rss # index.rss.builder
       format.xml  { render :xml => @tasks }
     end
   end
@@ -61,7 +64,9 @@ class TasksController < ApplicationController
   # PUT /tasks/1
   # PUT /tasks/1.xml
   def update
+    
     @task = Task.find(params[:id])
+    @temp = @task.project.members
 
     respond_to do |format|
       if @task.update_attributes(params[:task])
@@ -92,5 +97,15 @@ class TasksController < ApplicationController
     @projects = Project.find(:all).collect { |c| [c.name, c.id] }
     @users = User.find(:all).collect { |c| [c.name, c.id] }
   end
-
+  
+  def notify_users
+#    u = User.find :first
+#    @temp.each { |m|
+#       TaskNotifier.deliver_update_notification(u, @task)
+#    }
+    
+   @task.project.members.each do |member|
+      TaskNotifier.deliver_update_notification(member, @task)
+   end
+  end
 end

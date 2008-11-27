@@ -67,3 +67,13 @@ Rails::Initializer.run do |config|
   # Activate observers that should always be running
   # config.active_record.observers = :cacher, :garbage_collector
 end
+
+  ActionMailer::Base.smtp_settings = {
+    :tls => true,
+    :address => "smtp.gmail.com",
+    :port => "587",
+#    :domain => "YOURDOMAIN",
+    :authentication => :plain,
+    :user_name => "marczal.rails@gmail.com",
+    :password => "railsmarczal" 
+  }

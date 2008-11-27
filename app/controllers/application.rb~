@@ -15,6 +15,24 @@ class ApplicationController < ActionController::Base
 
   before_filter :configure_charsets 
 
+
+before_filter :authenticate
+
+def authenticate
+  case request.format # para libera acesso a rss
+  when Mime::RSS
+      unless authenticate_with_http_basic { |u, p| User.find_by_login_and_password(u, p) }
+        request_http_basic_authentication
+      end
+   else
+  unless session[:user]
+    session[:return_to] = request.request_uri
+    redirect_to login_path
+  end
+end
+
+
+
   # Especifico para Mysql
   def configure_charsets 
 	headers["Content-Type"] = "text/html; charset=utf-8" 
