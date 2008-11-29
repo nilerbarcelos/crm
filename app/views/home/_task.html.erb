@@ -1,0 +1,22 @@
+<li id="task_<%= task.id %>">
+    <% if task.status == "open" %>
+        <%= check_box_tag "task_mark_#{task.id}", task.id, false,
+            :onclick => remote_function(:url => { :action => :finish, :id => task },
+            :before => %(Element.show("loader")),
+            :complete => %(Element.hide("loader"))) %>
+           <%= task.title %> 
+           <%= link_to_remote 'Edit', {:url => { :action => :edit, :id => task},
+                             :before => %(Element.show("loader")),
+                             :complete => %(Element.hide("loader"))}, 
+           			{ :href => url_for(:action => :edit, :id => task) } %>
+           
+
+    <% else %>
+    <%= task.title %>
+    <% end %>
+</li> 
+
+<% if task.status == "open" %>
+  <%= draggable_element "task_#{task.id}", :revert => true %>
+<% end %>
+

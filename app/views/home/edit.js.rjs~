@@ -1,0 +1,2 @@
+  page.replace "new_form", :partial => "edit_task", :locals => {:task => @task}
+

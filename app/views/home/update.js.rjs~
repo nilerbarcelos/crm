@@ -1,0 +1,11 @@
+unless @task.valid? 
+  page.replace "edit_form", :partial => "edit_task", :locals => {:task => @task}
+else
+  page.replace  "task_#{@task.id}", :partial => "task"
+  page.visual_effect :highlight, "task_#{@task.id}", :duration => 3.5
+  @task = nil
+  page.replace "edit_form", :partial => "new_task"
+end
+
+
+
