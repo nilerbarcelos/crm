@@ -1,3 +1,26 @@
-<p>Bem-vindo!</p>
+<h1>My Tasks</h1>
 
+<div id="new_task">
+    <% if @task && !@task.new_record? %>
+	  <%= render :partial => "edit_task", :locals => {:task => @task} %>
+    <% else %>
+	  <%= render :partial => "new_task"%>
+    <% end %>
+<div/>
+
+<div id="projects">
+<% @incomplete_tasks.group_by(&:project).each do |project, tasks| %>
+  <%= render :partial => "project", :locals => {:project =>  project, :tasks =>  tasks} %>
+<% end %>
+</div>
+
+<div class="group">
+    <h2>Completed Tasks</h2>
+    <ul id="completed_tasks">
+        <% @completed_tasks.each do |task| %>
+            <%= render :partial => "task", :locals => {:task => task} %>
+        <% end %>
+    </ul>
+</div>
+<%= drop_receiving_element("completed_tasks", :url => { :action => "finish"}) %>
 

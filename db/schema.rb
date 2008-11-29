@@ -9,7 +9,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081118183052) do
+ActiveRecord::Schema.define(:version => 20081127141103) do
+
+  create_table "audit_entries", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "model_name"
+    t.string   "operation"
+    t.datetime "created_at"
+    t.text     "changes"
+  end
 
   create_table "contracts", :force => true do |t|
     t.string   "name",        :null => false

@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 
+  cattr_accessor :current_user_id
+
   KIND_OPTIONS = %w(administrator user)
 
   has_many :contracts, :foreign_key => 'leader_id', :dependent => :delete_all

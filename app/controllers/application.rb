@@ -14,9 +14,19 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
 
   before_filter :configure_charsets 
+  before_filter :authenticate
+  before_filter :set_current_user
+  helper_method :current_user
 
+protected
+  def current_user
+    @current_user ||= User.find(session[:user]) if session[:user]
+  end
 
-before_filter :authenticate
+ def set_current_user
+    User.current_user_id = session[:user]
+  end
+
 
 def authenticate
   case request.format # para libera acesso a rss

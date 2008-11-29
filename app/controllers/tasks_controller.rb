@@ -99,13 +99,8 @@ class TasksController < ApplicationController
   end
   
   def notify_users
-#    u = User.find :first
-#    @temp.each { |m|
-#       TaskNotifier.deliver_update_notification(u, @task)
-#    }
-    
    @task.project.members.each do |member|
-      TaskNotifier.deliver_update_notification(member, @task)
+      #TaskNotifier.deliver_update_notification(member, @task)
    end
   end
 end

@@ -1,5 +1,6 @@
 class Customer < ActiveRecord::Base
- 
+  include CRM::Auditing
+  
   has_many :projects, :dependent => :delete_all
   has_many :contracts, :through => :projects
 

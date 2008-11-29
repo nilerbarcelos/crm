@@ -105,7 +105,7 @@ class TasksController < ApplicationController
 #    }
     
    @task.project.members.each do |member|
-      TaskNotifier.deliver_update_notification(member, @task)
+      #TaskNotifier.deliver_update_notification(member, @task)
    end
   end
 end
