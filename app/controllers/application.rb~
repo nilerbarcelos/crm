@@ -16,10 +16,14 @@ class ApplicationController < ActionController::Base
   before_filter :configure_charsets 
   before_filter :authenticate
   before_filter :set_current_user
-
+  helper_method :current_user
 
 protected
-  def set_current_user
+  def current_user
+    @current_user ||= User.find(session[:user]) if session[:user]
+  end
+
+ def set_current_user
     User.current_user_id = session[:user]
   end
 
@@ -38,7 +42,8 @@ def authenticate
    end
 end
 
-
+#884080003268755
+          #69464
 
   # Especifico para Mysql
   def configure_charsets 
@@ -51,12 +56,12 @@ end
 protected
    class << self
 
-	attr_reader :parents
+  attr_reader :parents
 
-	def parent_resources(*parents)
-	  @parents = parents
-	end
-   end
+  def parent_resources(*parents)
+      @parents = parents
+  end
+end
 
   def parent_id(parent)
     request.path_parameters["#{ parent }_id"]

@@ -1,6 +1,12 @@
 require 'test_helper'
 
 class CustomersControllerTest < ActionController::TestCase
+  
+#  def setup
+#    super
+#    @request.session[:user] = users(:one).id
+#  end
+
   def test_should_get_index
     get :index
     assert_response :success
@@ -14,7 +20,11 @@ class CustomersControllerTest < ActionController::TestCase
 
   def test_should_create_customer
     assert_difference('Customer.count') do
-      post :create, :customer => { }
+      post :create, :customer => {
+	:name => "Diego Gura Marczal", :description => "Olá Diego Marczal", :rating => 3, 
+	:created_at => Time.now,  :updated_at => Time.now, :phone_country_code => 10,
+	:phone_area_code => 10, :phone_number => "100"
+      }
     end
 
     assert_redirected_to customer_path(assigns(:customer))

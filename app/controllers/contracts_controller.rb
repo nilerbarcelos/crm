@@ -6,7 +6,6 @@ class ContractsController < ApplicationController
   # GET /contracts.xml
   def index
     @contracts = Contract.find(:all)
-
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @contracts }

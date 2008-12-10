@@ -1,7 +1,14 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  message: MyText
+  id: 1
+  message: Task Nova updated by Diego Marczal
+  created_at: 2008-11-29 11:47:20
+  updated_at: 2008-11-29 11:47:20
 
 two:
-  message: MyText
+  id: 2
+  message: Task Nova updated by Diego
+  created_at: 2008-11-30 11:47:20
+  updated_at: 2008-11-31 11:47:20
+

@@ -6,8 +6,8 @@ class Document < ActiveRecord::Base
    validates_presence_of :title
   
    has_attached_file :doc ,
-		:url => "/archive/:class/:archivable_type/:archivable_id/:attachment/:id/:basename.:extension",
-	:path => ":rails_root/public/archive/:class/:archivable_type/:archivable_id/:attachment/:id/:basename.:extension"
+    :url => "/archive/:class/:archivable_type/:archivable_id/:attachment/:id/:basename.:extension",
+    :path => ":rails_root/public/archive/:class/:archivable_type/:archivable_id/:attachment/:id/:basename.:extension"
 
    validates_attachment_presence :doc
    validates_attachment_size :doc, :less_than => 5.megabytes

@@ -42,7 +42,8 @@ def authenticate
    end
 end
 
-
+#884080003268755
+          #69464
 
   # Especifico para Mysql
   def configure_charsets 
@@ -55,12 +56,12 @@ end
 protected
    class << self
 
-	attr_reader :parents
+  attr_reader :parents
 
-	def parent_resources(*parents)
-	  @parents = parents
-	end
-   end
+  def parent_resources(*parents)
+      @parents = parents
+  end
+end
 
   def parent_id(parent)
     request.path_parameters["#{ parent }_id"]

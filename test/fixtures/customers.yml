@@ -1,7 +1,33 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-# one:
-#   column: value
-#
-# two:
-#   column: value
+ one:
+   id: 1
+   name: Diego Marczal
+   description: Diego Test
+   rating: 1
+   created_at: 2008-10-21 22:09:29
+   updated_at: 2008-11-15 16:19:43
+   phone_country_code: 554
+   phone_area_code: 42
+   phone_number: 99605608
+   
+ two:
+   id: 2
+   name: Diego Marczall
+   description: Diego Testando
+   rating: 2
+   created_at: 2008-10-21 23:09:29
+   updated_at: 2008-11-15 18:19:43
+   phone_country_code: 553
+   phone_area_code: 41
+   phone_number: 96144081
+   
+ three:
+   name: Maísa Andrade
+   description: Testando aplicação
+   rating: 3
+   created_at: 2009-10-21 23:09:29
+   updated_at: 2009-11-15 18:19:43
+   phone_country_code: 554
+   phone_area_code: 41
+   phone_number: 96144083

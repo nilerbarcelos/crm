@@ -5,6 +5,7 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.xml
   def index
+    puts Project.first.customer_id
     #@projects = Project.find(:all)
     @projects = Project.find(:all, :include => [:customer], :order => "customers.name")
 

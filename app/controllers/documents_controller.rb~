@@ -8,7 +8,6 @@ class DocumentsController < ApplicationController
   # GET /documents.xml
   def index
     @documents = @parent.documents.find(:all)
-
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @documents }
@@ -46,13 +45,14 @@ class DocumentsController < ApplicationController
   # POST /documents.xml
   def create
     @document = @parent.documents.new(params[:document])
-
+    puts "Hello"
     respond_to do |format|
       if @document.save
         flash[:notice] = 'Document was successfully created.'
         format.html { redirect_to([@parent, @document]) }
         format.xml  { render :xml => @document, :status => :created, :location => @document }
       else
+        @document.errors.each {|t| puts t}
         format.html { render :action => "new" }
         format.xml  { render :xml => @document.errors, :status => :unprocessable_entity }
       end
@@ -83,14 +83,14 @@ class DocumentsController < ApplicationController
     @document.destroy
 
     respond_to do |format|
-      format.html { redirect_to(project_documents_url(@parent)) }
+      format.html { redirect_to([@parent, :documents]) }
       format.xml  { head :ok }
     end
   end
 
   protected
   def load_project
-    @parent =  parent_object :include => :documents
+    @parent =  parent_object
     #Project.find(params[:project_id], :include => :documents)
   end
 end

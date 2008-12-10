@@ -5,10 +5,14 @@ class SessionsController < ApplicationController
   def new
   end
 
+  def index
+   redirect_to root_url
+  end
 
   def create
     if user = User.find_by_login_and_password(params[:login],params[:password])
       session[:user] = user.id
+      puts session[:return_to]
       redirect_to session[:return_to]
     else
       flash[:notice] = "The login/password combination is invalid"

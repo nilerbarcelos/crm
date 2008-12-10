@@ -14,9 +14,12 @@ class TasksControllerTest < ActionController::TestCase
 
   def test_should_create_task
     assert_difference('Task.count') do
-      post :create, :task => { }
+      post :create, :task => { 
+       :title => "DSDF", :description => "ASDF", :status => "open", :owner_id => 1,
+       :priority => "normal", :progress => 0, :started_at => nil, :ended_at => nil,
+       :project_id => 1, :created_at => "2008-11-29 11:42:03", :updated_at => "2008-11-29 11:42:03"
+      }
     end
-
     assert_redirected_to task_path(assigns(:task))
   end
 

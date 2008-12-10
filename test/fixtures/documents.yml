@@ -1,7 +1,24 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  title: MyString
+  id: 1
+  title: Novo Documento
+  created_at: 2008-11-15 16:33:28
+  updated_at: 2008-11-16 18:59:12
+#  doc: fixture_file_upload('files/rails.png', 'image/png')
+  doc_file_name: moedas.pl_
+  doc_file_size: 2352
+  doc_updated_at: 2008-11-16 18:59:12
+  archivable_id: 1
+  archivable_type: User
 
 two:
-  title: MyString
+  id: 2
+  title: Novo Documento Project
+  created_at: 2008-11-15 16:33:28
+  updated_at: 2008-11-16 18:59:12
+  doc_file_name: moedas.pl_
+  doc_file_size: 2352
+  doc_updated_at: 2008-11-16 18:59:12
+  archivable_id: 1
+  archivable_type: Project

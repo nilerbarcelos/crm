@@ -1,13 +1,22 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  name: MyString
-  login: MyString
-  password: MyString
-  kind: MyString
+  id: 1
+  name: Diego
+  login: marczal
+  password: 123456
+  kind: administrator
 
 two:
-  name: MyString
-  login: MyString
-  password: MyString
-  kind: MyString
+  id: 2
+  name: Denise
+  login: denise
+  password: 1234
+  kind: user
+
+three:
+  id: 3
+  name: Maísa
+  login: maisa
+  password: 12345678
+  kind: user

@@ -41,13 +41,14 @@ class CustomersController < ApplicationController
   # POST /customers.xml
   def create
     @customer = Customer.new(params[:customer])
-
+    
     respond_to do |format|
       if @customer.save
         flash[:notice] = 'Customer was successfully created.'
         format.html { redirect_to(@customer) }
         format.xml  { render :xml => @customer, :status => :created, :location => @customer }
       else
+        @customer.errors.each{|t| puts t}
         format.html { render :action => "new" }
         format.xml  { render :xml => @customer.errors, :status => :unprocessable_entity }
       end

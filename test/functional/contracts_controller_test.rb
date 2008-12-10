@@ -1,6 +1,20 @@
 require 'test_helper'
 
 class ContractsControllerTest < ActionController::TestCase
+
+  def setup
+   super
+    @request.session[:user] = users(:one).id
+  end
+
+
+  def test_index_with_user
+   #@request.session[:user] = users(:one).id
+   get :index #, {}, {:user => users(:one).id }
+   assert_response :success
+   assert_template "index"
+  end
+
   def test_should_get_index
     get :index
     assert_response :success
@@ -14,7 +28,11 @@ class ContractsControllerTest < ActionController::TestCase
 
   def test_should_create_contract
     assert_difference('Contract.count') do
-      post :create, :contract => { }
+      post :create, :contract => { 
+       :name => "Contrato de Teste", :code => "RUBY", :description => "Teste de Contrato",
+       :status => "accepted", :started_at => Time.now, :ended_at => nil, :value => 50.0, 
+       :leader_id => 3, :project_id => 6, :created_at => Time.now, :updated_at => "2008-11-15 16:21:19"
+      }
     end
 
     assert_redirected_to contract_path(assigns(:contract))

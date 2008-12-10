@@ -1,23 +1,16 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  title: MyString
-  description: MyText
-  status: MyString
-  owner: 
-  priority: MyString
-  progress: 1
+  id: 1
+  title: Task One
+  description: One Test for You
+  status: open
+  owner_id: 1
+  priority: normal
+  progress: 2
   started_at: 2008-11-04 19:00:21
   ended_at: 2008-11-04 19:00:21
-  project: 
+  project_id: 1
+  created_at: 2008-11-15 16:11:07
+  updated_at: 2008-11-29 10:06:20
 
-two:
-  title: MyString
-  description: MyText
-  status: MyString
-  owner: 
-  priority: MyString
-  progress: 1
-  started_at: 2008-11-04 19:00:21
-  ended_at: 2008-11-04 19:00:21
-  project: 

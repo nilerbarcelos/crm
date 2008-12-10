@@ -5,6 +5,9 @@ class SessionsController < ApplicationController
   def new
   end
 
+  def index
+   redirect_to root_url
+  end
 
   def create
     if user = User.find_by_login_and_password(params[:login],params[:password])
@@ -13,10 +16,9 @@ class SessionsController < ApplicationController
     else
       flash[:notice] = "The login/password combination is invalid"
       #render :action => :new
-      redirect_to root_url
+      redirect_to login_path
     end
   end
-
 
 def destroy
   session[:user] = nil
