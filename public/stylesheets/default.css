@@ -22,10 +22,13 @@ ul#menu li
     display: inline;
     padding-right: 15px;
 }
+
+
 ul#menu li:before
 {
     content: "» "
 }
+
 #contents
 {
     margin: 20px;

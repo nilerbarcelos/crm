@@ -1,11 +1,12 @@
-<h1>Listing customers</h1>
+<h1><%= t 'customers.list' %></h1>
 
+<% cache(:action => "index", :id => session[:user]) do %>
 <table>
   <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Rating</th>
-    <th>Phone</th>
+    <th><%= t 'patterns.title' %></th>
+    <th><%= t 'patterns.description' %></th>
+    <th><%= t 'customers.rate' %></th>
+    <th><%= t 'patterns.phone' %></th>
   </tr>
 
 <% for customer in @customers %>
@@ -14,13 +15,13 @@
     <td><%=h customer.description %></td>
     <td><%=h customer.rating %></td>
     <td><%=h customer.phone %></td>
-    <td><%= link_to 'Show', customer %></td>
-    <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
-    <td><%= link_to 'Destroy', customer, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to (t 'patterns.show'), customer %></td>
+    <td><%= link_to (t 'patterns.edit'), edit_customer_path(customer) %></td>
+    <td><%= link_to (t 'patterns.destroy'), customer, :confirm => (t 'patterns.confirm'), :method => :delete %></td>
   </tr>
 <% end %>
 </table>
-
+<% end %>
 <br />
 
-<%= link_to 'New customer', new_customer_path %>
+<%= link_to (t 'customers.new'), new_customer_path %>

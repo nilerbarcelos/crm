@@ -1,0 +1,100 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  patterns:
+    name: "Name"
+    login: "User"
+    password: "Password"
+    kind: "Kind"
+    documents: "Documents"
+    show: "show"
+    edit: "Edit"
+    destroy: "Destroy"
+    confirm: "Are you sure?"
+    create: "Create"
+    back: "Back"
+    password_confirmation: "Password Confirmation"
+    update: "update"
+    description: "Description"
+    title: "Title"
+    started_at: "Started at"
+    ended_at: "Ended at"
+    select: "Select..."
+    members: "Members"
+    date: "Date"
+    image: "Image"
+    file: "file"
+    phone: "Phone Number"
+
+
+  users:
+    users: "Users"
+    list: "Listing Users"
+    new: "New User"
+    edit: "Editing User"
+    learder_of_contracts: "He is leader of the following contracts"
+    tasks: "Tasks destinated"
+
+  tasks:
+    tasks: "Tasks"
+    my_tasks: "My Tasks"
+    completed_tasks: "Completed Tasks"
+    list: "Listing tasks"
+    description: "Description"
+    status: "Status"
+    owner: "Owner"
+    priority: "Priority"
+    progress: "Progress"
+    started_at: "Started at"
+    project: "Project"
+    new: "New Task"
+    edit: "Editing Task"
+    notification:
+      task: "The Task"
+      was_update: " Was Update"
+
+  reports:
+    imediate_tasks: "Imediate tasks"
+
+  projects:
+    projects:"Projects"
+    new: "New Projct"
+    active: "Active"
+    inactive: "Inactive"
+    customer: "Customer"
+    list: "Listing projects"
+    edit: "Editing project"
+
+  documents:
+    documents: "Documents"
+    list: "Listing documents of"
+    new: "New Document"
+    edit: "Editing Document"
+
+  customers:
+    customers: "Customers"
+    list: "Listing Customers "
+    new: "New Customer"
+    edit: "Editing Customer"
+    rate: "Rating"
+    projects: "Projects"
+    contracts: "Contracts"
+
+  contracts:
+    contracts: "Contracts"
+    list: "Listing contracts"
+    new: "New Contract"
+    edit: "Editing Contract"
+    value: "Value"
+    leader: "Leader"
+    project: "Project"
+    code: "Code"
+
+
+  sessions:
+    title: "Loging"
+    logout: "Logout"
+  form:
+    button: "Enter"
+

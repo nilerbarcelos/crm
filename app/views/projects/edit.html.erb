@@ -1,12 +1,6 @@
-<h1>Editing project</h1>
+<h1><%= t 'projects.edit' %></h1>
 
-<% form_for(@project, :html => {:multipart => true}) do |f| %>
-  <%= f.error_messages %>
-  <%= render :partial => "form", :locals => { :f => f } %>
-  <p>
-    <%= f.submit 'Edit' %>
-  </p>
-<% end %>
+  <%= render :partial => "form", :locals => {:project => @project, :type => (t 'patterns.edit') } %>
 
-<%= link_to 'Show', @project %> |
-<%= link_to 'Back', projects_path %>
+| <%= link_to (t 'patterns.show'), @project %> 
+

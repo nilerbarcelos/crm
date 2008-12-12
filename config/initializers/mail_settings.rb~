@@ -14,5 +14,5 @@
 #    :domain => "YOURDOMAIN",
     :authentication => :plain,
     :user_name => "marczal.rails@gmail.com",
-    :password => "SENHA" 
+    :password => "marczalrails" 
   }

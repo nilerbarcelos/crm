@@ -1,12 +1,13 @@
-<h1>Listing projects</h1>
+<h1><%= t 'projects.list' %></h1>
 
 <table>
   <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Customer</th>
-    <th>Active</th>
-    <th>Documents</th>
+    <th><%= t 'patterns.image' %></th>
+    <th><%= t 'patterns.name' %></th>
+    <th><%= t 'patterns.description' %></th>
+    <th><%= t 'projects.customer' %></th>
+    <th><%= t 'projects.active' %></th>
+    <th><%= t 'patterns.documents' %></th>
   </tr>
 
 <% for project in @projects %>
@@ -16,12 +17,12 @@
     <td><%=h project.description %></td>
     <td><%=h project.customer.name %></td>
     <td><%=h project.active %></td>
-    <td><%= link_to "Documents", project_documents_path(project) %></td>
-    <td><%= link_to 'Show', project %></td>
-    <td><%= link_to 'Edit', edit_project_path(project) %></td>
-    <td><%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to (t 'patterns.documents'), project_documents_path(project) %></td>
+    <td><%= link_to (t 'patterns.show'), project %></td>
+    <td><%= link_to (t 'patterns.edit'), edit_project_path(project) %></td>
+    <td><%= link_to (t 'patterns.destroy'), project, :confirm => (t 'patterns.confirm'), :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
-<%= link_to 'New project', new_project_path %>
+<%= link_to (t 'projects.new'), new_project_path %>

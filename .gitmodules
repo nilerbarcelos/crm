@@ -1,0 +1,3 @@
+[submodule "vendor/plugins/prawnto"]
+	path = vendor/plugins/prawnto
+	url = git://github.com/thorny-sun/prawnto.git

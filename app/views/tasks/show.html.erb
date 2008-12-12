@@ -1,47 +1,47 @@
 <p>
-  <b>Title:</b>
+  <b><%= t 'patterns.title' %>:</b>
   <%=h @task.title %>
 </p>
 
 <p>
-  <b>Description:</b>
+  <b><%= t 'patterns.description' %>:</b>
   <%=h @task.description %>
 </p>
 
 <p>
-  <b>Status:</b>
+  <b><%= t 'tasks.status' %>:</b>
   <%=h @task.status %>
 </p>
 
 <p>
-  <b>Owner:</b>
+  <b><%= t 'tasks.owner' %>:</b>
   <%=link_to h(@task.owner.name), @task.owner %>
 </p>
 
 <p>
-  <b>Priority:</b>
+  <b><%= t 'tasks.priority' %>:</b>
   <%=h @task.priority %>
 </p>
 
 <p>
-  <b>Progress:</b>
+  <b><%= t 'tasks.progress' %>:</b>
   <%=h @task.progress %>
 </p>
 
 <p>
-  <b>Started at:</b>
+  <b><%= t 'patterns.started_at' %>:</b>
   <%=h @task.started_at %>
 </p>
 
 <p>
-  <b>Ended at:</b>
+  <b><%= t 'patterns.ended_at' %>:</b>
   <%=h @task.ended_at %>
 </p>
 
 <p>
-  <b>Project:</b>
+  <b><%= t 'tasks.project' %>:</b>
   <%= link_to h(@task.project.name), @task.project %>
 </p>
 
-<%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back', tasks_path %>
+<%= link_to (t 'patterns.edit'), edit_task_path(@task) %> |
+<%= link_to (t 'patterns.back'), tasks_path %>

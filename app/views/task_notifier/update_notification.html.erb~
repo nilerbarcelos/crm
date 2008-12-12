@@ -1,9 +1,9 @@
 <%= @user.name %>:
-The task "<%= @task.title %>" was update.
+<%= t ('tasks.notification.task') %> "<%= @task.title %>" <%= t ('tasks.notification.wasupdate') %>
 ---
 CRM System
-Date: <% @task.updated_at.rfc822 %>
+<%= t 'patterns.date' %>: <% t (@task.updated_at.rfc822) %>
 
-Members:
+<%= t 'patterns.membros' %>:
 
 <% @task.project.members do |m| m.name end %>

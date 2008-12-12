@@ -1,6 +1,14 @@
 class HomeController < ApplicationController
   before_filter :load_items
 
+  skip_before_filter :authenticate, :only => [:set_language]
+
+  def set_language
+    expire_fragment :controller =>"home", :action => "index", :id => session[:user]
+    puts "Ola"
+    session[:locate] = params[:locate]
+    redirect_to :back
+  end
 
   def index
     @incomplete_tasks = current_user.tasks.with_status :open

@@ -1,8 +1,7 @@
-<h1>Listing documents of <%= @parent.name %></h1>
 
 <table>
   <tr>
-    <th>Title</th>
+    <th><%= t 'patterns.title' %></th>
     <th>Download</th>
   </tr>
 
@@ -10,9 +9,9 @@
   <tr>
     <td><%=h document.title %></td>
     <td><%= link_to "Download", document.doc.url %></td>
-    <td><%= link_to 'Show', [@parent, document] %></td>
-    <td><%= link_to 'Edit', edit_polymorphic_path([@parent, document]) %></td>
-    <td><%= link_to 'Destroy', [@parent, document], :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to (t 'patterns.show'), [@parent, document] %></td>
+    <td><%= link_to (t 'patterns.edit'), edit_polymorphic_path([@parent, document]) %></td>
+    <td><%= link_to (t 'patterns.destroy'), [@parent, document], :confirm => (t 'patterns.confirm'), :method => :delete %></td>
   </tr>
 <% end %>
 </table>
@@ -20,5 +19,5 @@
 
 <br />
 
-<%= link_to "New", new_polymorphic_path([@parent, :document]) %>
+<%= link_to (t 'documents.new'), new_polymorphic_path([@parent, :document]) %>
 

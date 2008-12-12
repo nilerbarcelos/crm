@@ -1,4 +1,6 @@
-<h1>My Tasks</h1>
+<h1><%= t 'tasks.my_tasks' %></h1>
+
+<%  debugger %>
 
 <div id="new_task">
     <% if @task && !@task.new_record? %>
@@ -12,15 +14,15 @@
 <% @incomplete_tasks.group_by(&:project).each do |project, tasks| %>
   <%= render :partial => "project", :locals => {:project =>  project, :tasks =>  tasks} %>
 <% end %>
-
-
 </div>
+
 <div class="group">
-    <h2>Completed Tasks</h2>
+    <h2><%= t 'tasks.completed_tasks' %></h2>
     <ul id="completed_tasks">
         <% @completed_tasks.each do |task| %>
             <%= render :partial => "task", :locals => {:task => task} %>
         <% end %>
     </ul>
 </div>
+<%= drop_receiving_element("completed_tasks", :url => { :action => "finish"}) %>
 

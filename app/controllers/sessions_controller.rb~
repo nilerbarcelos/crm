@@ -2,6 +2,15 @@ class SessionsController < ApplicationController
 
   skip_before_filter :authenticate
 
+  def set_language
+    puts "--------------------------------------"
+    puts "Hello"
+    puts params[:locate]
+    redirect_to root_url
+    #I18n.locale = params[:locate]
+    #redirect_to request.request_uri
+  end
+
   def new
   end
 
@@ -12,6 +21,7 @@ class SessionsController < ApplicationController
   def create
     if user = User.find_by_login_and_password(params[:login],params[:password])
       session[:user] = user.id
+      puts session[:return_to]
       redirect_to session[:return_to]
     else
       flash[:notice] = "The login/password combination is invalid"
@@ -19,6 +29,7 @@ class SessionsController < ApplicationController
       redirect_to login_path
     end
   end
+
 
 def destroy
   session[:user] = nil

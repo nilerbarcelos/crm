@@ -16,18 +16,19 @@
 		display: none") %>
 
     <ul id="menu">
-	  <li><%= link_to "My Tasks", :controller => "home" %></li>
-      <li><%= link_to "Customers", customers_url %></li>
-      <li><%= link_to "Projects", projects_url %></li>
-      <li><%= link_to "Tasks", tasks_url %></li>
-      <li><%= link_to "Users", users_url %></li>
-      <li><%= link_to "Contracts", contracts_url %></li>
-      <li><%= link_to "Logout", logout_url %></li>
+       <li><%= link_to (t 'tasks.my_tasks'), :controller => "home" %></li>
+      <li><%= link_to (t 'customers.customers'), customers_url %></li>
+      <li><%= link_to (t 'projects.projects'), projects_url %></li>
+      <li><%= link_to (t 'tasks.tasks'), tasks_url %></li>
+      <li><%= link_to (t 'users.users'), users_url %></li>
+      <li><%= link_to (t 'contracts.contracts'), contracts_url %></li>
+      <li><%= link_to (t 'sessions.logout'), logout_url %></li>
+      <li><%= link_to image_tag('brasil.jpg'), :controller => "home", :action => "set_language", :locate => "pt_br"  %></li>
+      <%= link_to image_tag('usa.gif'), :controller => "home", :action => "set_language", :locate => "en"  %>
     </ul>
 
     <div id="contents">
       <%= yield %>
-    
     </div>
   </body>
 </html>

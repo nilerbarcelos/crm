@@ -1,11 +1,6 @@
-<h1>Editing contract</h1>
+<h1><%= (t 'contracts.edit') %></h1>
 
-<% form_for(@contract) do |f| %>
-  <%= render :partial => "form", :locals => { :f => f } %>
-  <p>
-    <%= f.submit "Update" %>
-  </p>
-<% end %>
+  <%= render :partial => "form", :locals => { :type => (t 'patterns.update') } %>
 
-<%= link_to 'Show', @contract %> |
-<%= link_to 'Back', contracts_path %>
+| <%= link_to (t 'patterns.show'), @contract %>
+

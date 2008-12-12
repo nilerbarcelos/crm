@@ -1,29 +1,34 @@
+<% form_for(@user) do |f| %>
    <%= f.error_messages %>
 
   <p>
-    <%= f.label :name %><br />
+    <%= f.label (t 'patterns.name') %><br />
     <%= f.text_field :name %>
   </p>
 
   <p>
-    <%= f.label :login %><br />
+    <%= f.label (t 'patterns.login') %><br />
     <%= f.text_field :login %>
   </p>
 
   <p>
-    <%= f.label :password %><br />
+    <%= f.label (t 'patterns.password') %><br />
     <%= f.password_field :password %>
   </p>
 
-   
+   <% if @user.new_record? %>
   <p>
-    <%= f.label :password_confirmation %><br />
+    <%= f.label (t 'patterns.password_confirmation') %><br />
     <%= f.password_field :password_confirmation %>
   </p>
-   
+   <% end %>
   <p>
-    <%= f.label :kind %><br />
+    <%= f.label (t 'patterns.kind') %><br />
      <%= f.select :kind, User::KIND_OPTIONS %>
   </p>
 
+  <%= submit_tag type %>
 
+<% end %>
+
+<%= link_to (t 'patterns.back'), users_path %>

@@ -1,16 +1,15 @@
 <% form_for([@parent, @document], :html => { :multipart => true }) do |f| %>
   <%= f.error_messages %>
   <p>
-    <%= f.label :title %><br />
+    <%= f.label (t 'patterns.title') %><br />
     <%= f.text_field :title %>
   </p>
   
-  <p>
-  </p>
+  <p><%= f.label (t 'patterns.file') %><br /></p>
   <p><%=f.file_field :doc %></p>
-  
   <p>
     <%= f.submit type %>
   </p>
 <% end %>
 
+<%= link_to (t 'patterns.show'), polymorphic_path([@parent, @document]) %>

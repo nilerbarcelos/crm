@@ -1,0 +1,10 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+  one:
+   user_id: 1
+   model_name: Customer
+   operation: update
+   created_at: 2008-11-27 14:15:49
+   changes: Mudou
+
+

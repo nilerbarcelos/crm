@@ -1,8 +1,7 @@
-<h1>Documents of <%= @parent.name %></h1>
+<h1> <%= (t 'documents.list').concat @parent.name %></h1>
 
-<h1>Editing document</h1>
+<h2><%= (t 'documents.edit') %></h2>
 
-<%= render :partial => "form", :locals => {:type => "Update"} %>
+<%= render :partial => "form", :locals => {:type => (t 'patterns.update')} %>
 
-<%= link_to 'Show', polymorphic_url([@parent, @document]) %> |
-<%= link_to 'Back',polymorphic_url([@parent, :documents]) %>
+| <%= link_to (t 'patterns.back'),polymorphic_url([@parent, :documents]) %>

@@ -22,10 +22,20 @@ ul#menu li
     display: inline;
     padding-right: 15px;
 }
+
+ul#menu img
+{
+    float: right;
+#   margin: 15px 10px 0px 0px;
+    display: block;
+    padding: -15px;
+}
+
 ul#menu li:before
 {
     content: "» "
 }
+
 #contents
 {
     margin: 20px;
@@ -51,8 +61,6 @@ th
   color: grey;
 }
 
-<!-- Style Para Tasks -->
-
 div.group h2
 {
   padding: 5px;
@@ -72,7 +80,6 @@ div.group ul li
 {
   margin: 8px 15px;
 }
-
 
 
 div.group

@@ -1,13 +1,13 @@
 <div id="form"> 
 <div class="edit" id="edit_form"> 
-<h2>Edit Task</h2> 
+<h2><%= t 'tasks.edit' %></h2> 
 <div class="part"> 
    <% form_remote_for(task, :url => { :action => "update" ,:id => task },
                              :before => %(Element.show("loader")),
                              :complete => %(Element.hide("loader"))) do |f| %>
 		<%= render :partial => "form", :locals => {:f => f} %>
    <p> 
-   <%= submit_tag "Update"  %> 
+   <%= submit_tag (t 'patterns.update') %> 
    </p> 
  <% end %>
  </div>

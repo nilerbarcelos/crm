@@ -1,6 +1,7 @@
-<h1>Documents of <%= @parent.name %></h1>
+<h1> <%= (t 'documents.list').concat @parent.name %></h1>
+
 <p>
-  <b>Title:</b>
+  <b><%= (t 'patterns.title')%>:</b>
   <%=h @document.title %>
 </p>
 <p>
@@ -8,5 +9,5 @@
   <%= link_to "Download #{@document.title}", @document.doc.url %>
 </p>
 
-<%= link_to 'Edit', edit_polymorphic_path([@parent, @document]) %> |
-<%= link_to 'Back',polymorphic_url([@parent, :documents]) %>
+<%= link_to (t 'patterns.edit'), edit_polymorphic_path([@parent, @document]) %> |
+<%= link_to (t 'patterns.back'),polymorphic_url([@parent, :documents]) %>

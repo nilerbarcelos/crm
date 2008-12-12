@@ -1,20 +1,26 @@
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :name %><br />
+    <%= f.label (t 'patterns.name')%><br />
     <%= f.text_field :name %>
   </p>
   <p>
-    <%= f.label :description %><br />
+    <%= f.label (t 'patterns.description') %><br />
     <%= f.text_area :description %>
   </p>
   <p>
-    <%= f.label :rating %><br />
+    <%= f.label (t 'customers.rate') %><br />
     <%= f.text_field :rating %>
   </p>
   <p> 
-	<%= f.label :phone %><br /> 
+	<%= f.label (t 'patterns.phone') %><br /> 
 	<%= f.text_field :phone_country_code, :size => 3 %> 
 	<%= f.text_field :phone_area_code, :size => 3 %> 
 	<%= f.text_field :phone_number, :size => 10 %> 
 </p> 
+  <p>
+    <%= f.submit type %>
+  </p>
+<% end %>
+
+<%= link_to (t 'patterns.back'), customers_path %>

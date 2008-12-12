@@ -1,15 +1,15 @@
 <p>
-  <b>Name:</b>
+  <b><%= t 'patterns.name' %>:</b>
   <%=h @contract.name %>
 </p>
 
 <p>
-  <b>Code:</b>
+  <b><%= t 'contracts.code' %>:</b>
   <%=h @contract.code %>
 </p>
 
 <p>
-  <b>Description:</b>
+  <b><%= t 'patterns.description' %>:</b>
   <%=h @contract.description %>
 </p>
 
@@ -19,30 +19,30 @@
 </p>
 
 <p>
-  <b>Started at:</b>
+  <b><%= t 'patterns.started_at' %>:</b>
   <%=h @contract.started_at %>
 </p>
 
 <p>
-  <b>Ended at:</b>
+  <b><%= t 'patterns.ended_at' %>:</b>
   <%=h @contract.ended_at %>
 </p>
 
 <p>
-  <b>Value:</b>
+  <b><%= t 'contracts.value' %>:</b>
   <%=h @contract.value %>
 </p>
 
 <p>
-  <b>Leader:</b>
+  <b><%= t 'contracts.leader' %>:</b>
   <%=h @contract.leader.name%>
 </p>
 
 <p>
-  <b>Project:</b>
+  <b><%= t 'contracts.project' %>:</b>
   <%= link_to h(@contract.project.name), @contract.project %>
 </p>
 
 
-<%= link_to 'Edit', edit_contract_path(@contract) %> |
-<%= link_to 'Back', contracts_path %>
+<%= link_to t 'patterns.edit', edit_contract_path(@contract) %> |
+<%= link_to t 'patterns.back', contracts_path %>

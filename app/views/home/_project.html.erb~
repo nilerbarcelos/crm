@@ -3,7 +3,6 @@
         <ul id="project_tasks_<%= project.id %>">
             <% tasks.each do |task| %>
                 <%= render :partial => "task", :locals => {:task => task} %>
-                <%= link_to 'edit', :action => :edit, :id => task  %>
             <% end %>
         </ul>
     <% end %>

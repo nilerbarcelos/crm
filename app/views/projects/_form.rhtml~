@@ -1,30 +1,39 @@
+<% form_for(project, :html => {:multipart => true}) do |f| %>
+
+  <%= f.error_messages %>
   <p>
-    <%= f.label :name %><br />
+    <%= f.label (t 'patterns.name') %><br />
     <%= f.text_field :name %>
   </p>
   <p>
-    <%= f.label :description %><br />
+    <%= f.label (t 'patterns.description') %><br />
     <%= f.text_area :description %>
   </p>
   <p>
-    <%= f.label :customer %><br />
-    <%= f.select :customer_id, @customers, :prompt => "Select..." %>
+    <%= f.label (t 'projects.customer') %><br />
+    <%= f.select :customer_id, @customers, :prompt => (t 'patterns.select') %>
   </p>
 
   <p>
     <%= f.label :status %><br />
-    Inactive <%= radio_button "project", "active", "false"  %>
-    Active <%= radio_button "project", "active","true"  %>
+    <%= (t 'projects.active') %> <%= radio_button "project", "active", "false"  %>
+    <%= (t 'projects.inactive') %>   <%= radio_button "project", "active","true"  %>
   </p>
 
   <p>
-  <b>Members</b><br />
+  <b><%= (t 'patterns.members') %></b><br />
   <% @users.each do |user| %>
     <%= check_box_tag "project[member_ids][]", user.id, @project.members.include?(user) %>
     <%= user.name %><br />
   <% end %>
 </p>
 
-  <p><%=f.file_field :photo%></p>
+  <p><%= t 'patterns.image' %></p>
+  <p><%=f.file_field :photo %></p>
 
+  <p>
+    <%= f.submit type %>
+  </p>
+<% end %>
 
+<%= link_to (t 'patterns.back'), projects_path %>

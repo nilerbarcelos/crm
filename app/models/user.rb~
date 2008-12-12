@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
 
   cattr_accessor :current_user_id
+  #attr_protected :password
+
 
   KIND_OPTIONS = %w(administrator user)
 

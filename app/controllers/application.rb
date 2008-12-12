@@ -13,12 +13,21 @@ class ApplicationController < ActionController::Base
   # from your application log (in this case, all fields with names like "password"). 
   # filter_parameter_logging :password
 
-  before_filter :configure_charsets 
+  before_filter :set_current_locate
+  before_filter :configure_charsets
   before_filter :authenticate
   before_filter :set_current_user
   helper_method :current_user
 
+  filter_parameter_logging :password
+
 protected
+
+  def set_current_locate
+    session[:locate] ||= "en"
+    I18n.locale = session[:locate]
+  end
+
   def current_user
     @current_user ||= User.find(session[:user]) if session[:user]
   end

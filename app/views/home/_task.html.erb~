@@ -5,7 +5,7 @@
             :before => %(Element.show("loader")),
             :complete => %(Element.hide("loader"))) %>
            <%= task.title %> 
-           <%= link_to_remote 'Edit', {:url => { :action => :edit, :id => task},
+           <%= link_to_remote (t 'patterns.edit'), {:url => { :action => :edit, :id => task},
                              :before => %(Element.show("loader")),
                              :complete => %(Element.hide("loader"))}, 
            			{ :href => url_for(:action => :edit, :id => task) } %>
@@ -15,3 +15,8 @@
     <%= task.title %>
     <% end %>
 </li> 
+
+<% if task.status == "open" %>
+  <%= draggable_element "task_#{task.id}", :revert => true %>
+<% end %>
+

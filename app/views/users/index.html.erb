@@ -1,12 +1,11 @@
-<h1>Listing users</h1>
-
+<h1><%= t 'users.list' %></h1>
 <table>
   <tr>
-    <th>Name</th>
-    <th>Login</th>
-    <th>Password</th>
-    <th>Kind</th>
-    <th>Documents</th>
+    <th><%= t 'patterns.name' %></th>
+    <th><%= t 'patterns.login' %></th>
+    <th><%= t 'patterns.password' %></th>
+    <th><%= t 'patterns.kind' %></th>
+    <th><%= t 'patterns.documents' %></th>
   </tr>
 
 <% for user in @users %>
@@ -15,10 +14,10 @@
     <td><%=h user.login %></td>
     <td><%=h user.password %></td>
     <td><%=h user.kind %></td>
-    <td><%= link_to "Documents", user_documents_path(user) %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to (t 'patterns.documents'), user_documents_path(user) %></td>
+    <td><%= link_to (t 'patterns.show'), user %></td>
+    <td><%= link_to (t 'patterns.edit'), edit_user_path(user) %></td>
+    <td><%= link_to (t 'patterns.destroy'), user, :confirm => (t 'patterns.confirm'), :method => :delete %></td>
   </tr>
 <% end %>
 </table>
@@ -26,4 +25,4 @@
 <br />
 
 
-<%= link_to 'New user', new_user_path %>
+<%= link_to (t 'users.new'), new_user_path %>

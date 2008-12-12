@@ -1,22 +1,32 @@
 <p>
-  <b>Name:</b>
+  <b><%= t 'patterns.name' %>:</b>
   <%=h @customer.name %>
 </p>
 
 <p>
-  <b>Description:</b>
+  <b><%= t 'patterns.description' %>:</b>
   <%=h @customer.description %>
 </p>
 
 <p> 
- <b>Rating:</b> 
+ <b><%= t 'customers.rate' %>:</b> 
  <%=h @customer.rating %> 
 </p> 
 
+ <% unless @customer.projects.empty? %> 
+ <p> 
+  <b><%= t 'customers.projects' %>:</b> 
+ <ul> 
+   <% @customer.projects.each do |project| %> 
+   <li><%= link_to project.name, project %></li> 
+   <% end %> 
+  </ul> 
+<% end %> 
+ </p> 
 
 <% unless @customer.contracts.empty? %>
   <p>
-    <b>Contracts:</b>
+    <b><%= t 'customers.contracts' %>:</b>
     <ul>
       <% @customer.contracts.each do |contract| %>
         <li><%=h contract.name %></li>
@@ -25,5 +35,5 @@
   </p>
 <% end %>
 
-<%= link_to 'Edit', edit_customer_path(@customer) %> |
-<%= link_to 'Back', customers_path %>
+<%= link_to <%= t 'patterns.edit' %>, edit_customer_path(@customer) %> |
+<%= link_to <%= t 'patterns.back' %>, customers_path %>
