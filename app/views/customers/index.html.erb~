@@ -1,6 +1,6 @@
 <h1><%= t 'customers.list' %></h1>
 
-<% cache(:action => "index", :id => session[:user]) do %>
+<% cache(:controller => "customer" :action => "index", :id => session[:user]) do %>
 <table>
   <tr>
     <th><%= t 'patterns.title' %></th>
@@ -24,4 +24,4 @@
 <% end %>
 <br />
 
-<%= link_to t 'customers.new', new_customer_path %>
+<%= link_to (t 'customers.new'), new_customer_path %>

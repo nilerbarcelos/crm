@@ -7,7 +7,7 @@ class ReportsController < ApplicationController
    end
   end
 
-  def index
+  def customers_in_pdf
    @customers = Customer.find :all
    respond_to do |format|
     format.pdf  #{ render :layout => false }
@@ -15,7 +15,7 @@ class ReportsController < ApplicationController
   end
 
   def list_immediate_action_required
-	@tasks = Task.find_high(:order => "title")
+	  @tasks = Task.find_high(:order => "title")
   end
 
   def send_from_disk

@@ -1,6 +1,6 @@
 <h1><%= t 'customers.list' %></h1>
 
-<% cache(:action => "index", :id => session[:user]) do %>
+<% cache(:controller => "customer", :action => "index", :id => session[:user]) do %>
 <table>
   <tr>
     <th><%= t 'patterns.title' %></th>

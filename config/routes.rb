@@ -3,6 +3,8 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :tasks
 
+ # map.resources :reports
+
   map.resources :contracts
 
   map.resources :users do |u| 
@@ -21,6 +23,12 @@ ActionController::Routing::Routes.draw do |map|
     sessions.login "/login",   :action => "new"
     sessions.logout "/logout", :action => "destroy"
   end
+ 
+  map.with_options(:controller => "reports") do |report|
+    report.reports "/reports" 
+    report.immediate_tasks "/immediate_tasks", :action => "list_immediate_action_required"
+  end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
 

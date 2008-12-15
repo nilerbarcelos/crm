@@ -5,3 +5,4 @@ config/database.yml
 config/initializers/mail_settings.rb
 
 db/*.sqlite3
+

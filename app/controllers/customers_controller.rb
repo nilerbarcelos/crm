@@ -44,7 +44,8 @@ class CustomersController < ApplicationController
     
     respond_to do |format|
       if @customer.save
-        expire_fragment :action => "index", :id => session[:user]
+        #expire_fragment :action => "index", :id => session[:user]
+        expire_fragment :controller => "customer", :action => "index", :id => session[:user]
         flash[:notice] = 'Customer was successfully created.'
         format.html { redirect_to(@customer) }
         format.xml  { render :xml => @customer, :status => :created, :location => @customer }
@@ -62,7 +63,8 @@ class CustomersController < ApplicationController
 
     respond_to do |format|
       if @customer.update_attributes(params[:customer])
-        expire_fragment :action => "index", :id => session[:user]
+        #expire_fragment :action => "index", :id => session[:user]
+        expire_fragment :controller => "customer", :action => "index", :id => session[:user]
         flash[:notice] = 'Customer was successfully updated.'
         format.html { redirect_to(@customer) }
         format.xml  { head :ok }
@@ -78,7 +80,9 @@ class CustomersController < ApplicationController
   def destroy
     @customer = Customer.find(params[:id])
     @customer.destroy
-    expire_fragment :action => "index", :id => session[:user]
+    #expire_fragment :action => "index", :id => session[:user]
+     expire_fragment :controller => "customer", :action => "index", :id => session[:user]
+
 
     respond_to do |format|
       format.html { redirect_to(customers_url) }

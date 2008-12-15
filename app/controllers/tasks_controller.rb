@@ -92,7 +92,7 @@ class TasksController < ApplicationController
     end
   end
 
-  protected
+ # protected
   def load_users_and_projects
     @projects = Project.find(:all).collect { |c| [c.name, c.id] }
     @users = User.find(:all).collect { |c| [c.name, c.id] }
@@ -100,7 +100,7 @@ class TasksController < ApplicationController
   
   def notify_users
    @task.project.members.each do |member|
-      #TaskNotifier.deliver_update_notification(member, @task)
+    TaskNotifier.deliver_update_notification(member, @task)
    end
   end
 end

@@ -92,20 +92,22 @@ class TasksController < ApplicationController
     end
   end
 
-  protected
+ # protected
   def load_users_and_projects
     @projects = Project.find(:all).collect { |c| [c.name, c.id] }
     @users = User.find(:all).collect { |c| [c.name, c.id] }
   end
   
   def notify_users
-#    u = User.find :first
-#    @temp.each { |m|
-#       TaskNotifier.deliver_update_notification(u, @task)
-#    }
-    
-   @task.project.members.each do |member|
-      #TaskNotifier.deliver_update_notification(member, @task)
-   end
+   @task = Task.last
+   member = @task.project.members.last
+   puts "------------------"
+   puts member
+   puts "------------------"
+   puts member.email
+   puts "------------------"   
+   #@task.project.members.each do |member|
+    TaskNotifier.deliver_update_notification(member, @task)
+   #end
   end
 end

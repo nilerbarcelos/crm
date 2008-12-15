@@ -17,6 +17,11 @@
   <b><%= t 'patterns.kind' %>:</b>
   <%=h @user.kind %>
 </p>
+
+<p>
+  <b>Email:</b>
+  <%=h @user.email %>
+</p>
  
  <% unless @user.contracts.empty? %> 
  <p> 

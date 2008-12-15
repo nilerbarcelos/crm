@@ -4,7 +4,7 @@ class HomeController < ApplicationController
   skip_before_filter :authenticate, :only => [:set_language]
 
   def set_language
-#    expire_fragment :controller =>"home", :action => "index", :id => session[:user]
+    expire_fragment :controller => "customer", :action => "index", :id => session[:user]
 #    puts "Ola"
     session[:locate] = params[:locate]
     redirect_to :back

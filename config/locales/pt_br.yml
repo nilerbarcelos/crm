@@ -51,10 +51,14 @@ pt_br:
     edit: "Editar Tarefa"
     notification:
       task: "A Tarefa"
-      was_upadte: "Foi Atualizada"
+      was_update: "Foi Atualizada"
 
   reports:
     imediate_tasks: "Tarefas Urgentes"
+    private_pdf: "Pdf Privado"
+    a4_test: "Teste A4"
+    customers_pdf: "Pdf dos Clientes"
+
 
   projects:
     projects: "Projetos"

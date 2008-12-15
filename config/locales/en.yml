@@ -56,9 +56,12 @@ en:
 
   reports:
     imediate_tasks: "Imediate tasks"
+    private_pdf: "Private Pdf"
+    a4_test: "A4 Test"
+    customers_pdf: "Customers Pdf"
 
   projects:
-    projects:"Projects"
+    projects: "Projects"
     new: "New Projct"
     active: "Active"
     inactive: "Inactive"
