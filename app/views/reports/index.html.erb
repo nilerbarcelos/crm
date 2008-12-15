@@ -1,0 +1,9 @@
+<h1>Reports</h1>
+<div>
+    <ul>
+      <li><%= link_to (t 'reports.private_pdf'), :action => "send_from_disk" %></li>
+      <li><%= link_to (t 'reports.a4_test'), :action => "a4" %></li>
+      <li><%= link_to (t 'reports.customers_pdf'), :action => "customers_in_pdf" %></li>
+      <li><%= link_to (t 'reports.imediate_tasks'), immediate_tasks_path %></li>
+    </ul>
+</div>
